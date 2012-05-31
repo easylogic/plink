@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{58373F3F-70C7-40A8-9C27-6DBA8F0F0E51}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>PLinkCore</RootNamespace>
+    <AssemblyName>PLinkCore</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <WarningLevel>4</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <BaseAddress>4194304</BaseAddress>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ChangeLog.txt" />
+    <None Include="Properties\app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BookmarkItem.cs">
+      <DependentUpon>HostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DevItem.cs">
+      <DependentUpon>HostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadForm.cs" />
+    <Compile Include="DownloadForm.Designer.cs">
+      <DependentUpon>DownloadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HostCheck.cs">
+      <DependentUpon>HostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HostData.cs" />
+    <Compile Include="HostItem.cs">
+      <DependentUpon>HostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HostSorter.cs">
+      <DependentUpon>HostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HostTab.cs" />
+    <Compile Include="HostTab.Designer.cs">
+      <DependentUpon>HostTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HostType.cs">
+      <DependentUpon>HostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLink.cs" />
+    <Compile Include="PLinkApi.cs">
+      <DependentUpon>PLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PLinkApiType.cs">
+      <DependentUpon>PLink.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyForm.cs" />
+    <Compile Include="PolicyForm.Designer.cs">
+      <DependentUpon>PolicyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyItem.cs">
+      <DependentUpon>HostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PolicyType.cs">
+      <DependentUpon>HostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RootItem.cs">
+      <DependentUpon>HostData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Util.cs">
+      <DependentUpon>PLink.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DownloadForm.resx">
+      <DependentUpon>DownloadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HostTab.resx">
+      <DependentUpon>HostTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PolicyForm.resx">
+      <DependentUpon>PolicyForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+</Project>
