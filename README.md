@@ -1,0 +1,1 @@
+<DIV><A href="http://hacker.com/http://fifaonline.pmang.com/index.nwz">aaaaa</A></DIV>

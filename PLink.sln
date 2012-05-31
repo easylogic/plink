@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 4.2.0.8783
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLink", "PLink\PLink.csproj", "{7B2DD253-1C8B-44D9-8A79-E707A25267E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLinkCore", "PLinkCore\PLinkCore.csproj", "{58373F3F-70C7-40A8-9C27-6DBA8F0F0E51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PLinkAddon", "PLinkAddon\PLinkAddon.csproj", "{98DC32E2-F58F-4697-9B74-22DF9BB63EDB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B2DD253-1C8B-44D9-8A79-E707A25267E5}.Debug|x86.Build.0 = Debug|x86
+		{7B2DD253-1C8B-44D9-8A79-E707A25267E5}.Debug|x86.ActiveCfg = Debug|x86
+		{7B2DD253-1C8B-44D9-8A79-E707A25267E5}.Release|x86.Build.0 = Release|x86
+		{7B2DD253-1C8B-44D9-8A79-E707A25267E5}.Release|x86.ActiveCfg = Release|x86
+		{58373F3F-70C7-40A8-9C27-6DBA8F0F0E51}.Debug|x86.Build.0 = Debug|x86
+		{58373F3F-70C7-40A8-9C27-6DBA8F0F0E51}.Debug|x86.ActiveCfg = Debug|x86
+		{58373F3F-70C7-40A8-9C27-6DBA8F0F0E51}.Release|x86.Build.0 = Release|x86
+		{58373F3F-70C7-40A8-9C27-6DBA8F0F0E51}.Release|x86.ActiveCfg = Release|x86
+		{98DC32E2-F58F-4697-9B74-22DF9BB63EDB}.Debug|x86.Build.0 = Debug|x86
+		{98DC32E2-F58F-4697-9B74-22DF9BB63EDB}.Debug|x86.ActiveCfg = Debug|x86
+		{98DC32E2-F58F-4697-9B74-22DF9BB63EDB}.Release|x86.Build.0 = Release|x86
+		{98DC32E2-F58F-4697-9B74-22DF9BB63EDB}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal
