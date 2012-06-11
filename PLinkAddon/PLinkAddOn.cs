@@ -54,13 +54,11 @@ namespace PLink
 			
 			if (check == null) return;
 			if (!check.Checked) return;
-			bool is403 = false;
 			
 			// Host, Real 적용 
 			if (check.isHost() || check.isReal()) {		
 				if (oSession.HTTPMethodIs("CONNECT")) {
 					oSession.hostname = check.afterHost();
-					is403 = true;
 				} else {
 					oSession.bypassGateway = true;
 					oSession["x-overrideHost"] = check.After;
@@ -70,25 +68,14 @@ namespace PLink
 			else if (check.isUrl() || check.isPattern()) {
 				if (oSession.HTTPMethodIs("CONNECT")) {
 					oSession.hostname = check.afterHost();
-					is403 = true;
 				} else {
 					// 캐쉬된 정책 적용 
 					string redirect = check.getHostItem().Redirect;
 					if (!string.IsNullOrEmpty(redirect)) { 
 						check.After = redirect;
-					} else { 
-						check.setUserConfig(Util.USER_CONFIG_USERID, PLinkCore.PLink.host.UserId);
-						if (!string.IsNullOrEmpty(PLinkCore.PLink.host.RootDir)) {
-							check.setKeyword(Util.KEYWORD_ROOT, PLinkCore.PLink.host.RootDir);
-						}
 					}
 					oSession.fullUrl = check.afterUrl(oSession.fullUrl);
 				}
-			}
-			
-			// 스크립트 필터 적용 
-			if (!is403 && PLinkCore.PLink.host.isScriptFilter) {
-				oSession.fullUrl = HostCheck.scriptFilter(oSession.fullUrl);
 			}
 		}
 
@@ -98,10 +85,6 @@ namespace PLink
 			if (oSession.HTTPMethodIs("CONNECT")) {
 				oSession.hostname = patternCheck.afterHost();
 			} else {
-				patternCheck.setUserConfig(Util.USER_CONFIG_USERID, PLinkCore.PLink.host.UserId);
-				if (!string.IsNullOrEmpty(PLinkCore.PLink.host.RootDir)) {
-					patternCheck.setKeyword(Util.KEYWORD_ROOT, PLinkCore.PLink.host.RootDir);
-				}
 				oSession.fullUrl = patternCheck.afterUrl(oSession.fullUrl);
 			}
 		}

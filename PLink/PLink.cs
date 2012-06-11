@@ -32,7 +32,7 @@ namespace PLink
 			get { return port; }
 			set {
 				port = value;
-				Util.setPref("plink.remote.port", port);
+				FiddlerApplication.Prefs.SetInt32Pref("plink.remote.port", port);
 				Restart();
 			}
 		}
@@ -41,7 +41,7 @@ namespace PLink
 			get { return DisabledCache; }
 			set {
 				disabledCache = value;
-				Util.setPref("plink.disabled.cache", disabledCache);
+				FiddlerApplication.Prefs.SetBoolPref("plink.disabled.cache", disabledCache);
 			}
 		}
 		
@@ -61,15 +61,9 @@ namespace PLink
 
 		public override void initializeUI()
 		{
-			int _port = Util.getPrefInt("plink.remote.port");
+			this.port = FiddlerApplication.Prefs.GetInt32Pref("plink.remote.port", 8888);
 			
-			log(_port.ToString());
-			
-			if (_port > 0) {
-				port = _port;
-			}
-			
-			mainForm.DisabledCache = Util.getPrefBool("plink.disabled.cache");
+			mainForm.DisabledCache = FiddlerApplication.Prefs.GetBoolPref("plink.disabled.cache", false);
 			
 			FiddlerApplication.BeforeRequest += AutoTamperRequestBefore;
 			FiddlerApplication.BeforeReturningError += OnBeforeReturningError;
@@ -165,27 +159,15 @@ namespace PLink
 				//return;
 			}
 			
-			/*
-			List<HostCheck> patternCheckList = PLinkCore.PLink.host.checkPatternList(oSession.fullUrl);
-			
-			if (patternCheckList.Count > 0) { 
-				foreach(HostCheck patternCheck in patternCheckList) { 
-					checkUrlType(patternCheck, oSession);
-				}
-			}
-			*/
-			
 			HostCheck check = PLinkCore.PLink.host.checkUrl(oSession.hostname, oSession.PathAndQuery);
 			
 			if (check == null) return;
 			if (!check.Checked) return;
-			bool is403 = false;
 			
 			// Host, Real 적용
 			if (check.isHost() || check.isReal()) {
 				if (oSession.HTTPMethodIs("CONNECT")) {
 					oSession.hostname = check.afterHost();
-					is403 = true;
 				} else {
 					oSession.bypassGateway = true;
 					oSession["x-overrideHost"] = check.After;
@@ -195,26 +177,15 @@ namespace PLink
 			else if (check.isUrl() || check.isPattern()) {
 				if (oSession.HTTPMethodIs("CONNECT")) {
 					oSession.hostname = check.afterHost();
-					is403 = true;
 				} else {
 					
 					// 캐쉬된 정책 적용 
 					string redirect = check.getHostItem().Redirect;
 					if (!string.IsNullOrEmpty(redirect)) { 
 						check.After = redirect;
-					} else { 
-						check.setUserConfig(Util.USER_CONFIG_USERID, PLinkCore.PLink.host.UserId);
-						if (!string.IsNullOrEmpty(PLinkCore.PLink.host.RootDir)) {
-							check.setKeyword(Util.KEYWORD_ROOT, PLinkCore.PLink.host.RootDir);
-						}
 					}
 					oSession.fullUrl = check.afterUrl(oSession.fullUrl);
 				}
-			}
-			
-			// 스크립트 필터 적용
-			if (!is403 && PLinkCore.PLink.host.isScriptFilter) {
-				oSession.fullUrl = HostCheck.scriptFilter(oSession.fullUrl);
 			}
 		}
 
@@ -224,10 +195,6 @@ namespace PLink
 			if (oSession.HTTPMethodIs("CONNECT")) {
 				oSession.hostname = patternCheck.afterHost();
 			} else {
-				patternCheck.setUserConfig(Util.USER_CONFIG_USERID, PLinkCore.PLink.host.UserId);
-				if (!string.IsNullOrEmpty(PLinkCore.PLink.host.RootDir)) {
-					patternCheck.setKeyword(Util.KEYWORD_ROOT, PLinkCore.PLink.host.RootDir);
-				}
 				oSession.fullUrl = patternCheck.afterUrl(oSession.fullUrl);
 			}
 		}

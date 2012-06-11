@@ -58,10 +58,6 @@ namespace PLinkCore
 			<meta name='viewport' content='width=device-width, initial-scale=1.0'>
 			<script src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js' type='text/javascript'></script>		    
 			<link href='http://twitter.github.com/bootstrap/assets/css/bootstrap.css' rel='stylesheet'>
-			<!--link href='http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css' rel='stylesheet'-->
-			<!--[if lt IE 9]>
-			  <script src='http://html5shim.googlecode.com/svn/trunk/html5.js'></script>
-		    <![endif]-->
 		    <!-- Le fav and touch icons -->
 		    <link rel='shortcut icon' href='http://twitter.github.com/bootstrap/assets/ico/favicon.ico'>
 		    <link rel='apple-touch-icon-precomposed' sizes='114x114' href='http://twitter.github.com/bootstrap/assets/ico/apple-touch-icon-114-precomposed.png'>
@@ -93,25 +89,7 @@ namespace PLinkCore
 			}
 			return sb.ToString();
 		}
-		
-		public static string DevListOption(ArrayList list, int index)
-		{
-			StringBuilder sb = new StringBuilder();
-			for(int i = 0, len = list.Count; i < len; i++) { 
-				KeyValuePair<string, string> item = (KeyValuePair<string, string>)list[i];
-				sb.Append(new DevItem(item.Key).ToOption(i, i == index));
-			}
-			return sb.ToString();			
-		}		
-		
-		public static string RootListOption(ArrayList list, int index)
-		{
-			StringBuilder sb = new StringBuilder();
-			for(int i = 0, len = list.Count; i < len; i++) { 
-				sb.Append(new RootItem(list[i].ToString()).ToOption(i, i == index));
-			}
-			return sb.ToString();	
-		}		
+
 		
 		public static string ViewIndex()
 		{
@@ -123,36 +101,9 @@ namespace PLinkCore
 						<div class='alert' style='margin-bottom:1px;padding:3px;'>
 						<input type='checkbox' id='plink' onClick='remote(""plink"", this.checked)' /> PLink Start! 
 						</div>
-						
-						<div class='alert' style='margin-bottom:1px;padding:2px;'>
-						<label for='bookmark' class='list' style='display:inline'><i class='icon-bookmark'></i> 즐겨찾기</label>
-						<select id='bookmark' onChange='remote(""bookmark"", this.selectedIndex)' class='span4'></select>
-						</div>						
-						
-						<div class='alert alert-error' style='margin-bottom:1px;padding:3px;'>
-						<label for='web' class='list'><i class='icon-book'></i> 정책</label>
-						<select id='web' onChange='remote(""web"", this.selectedIndex)' size='5' class='span4'></select>
-						</div>
-						
 						<div class='alert alert-success' style='margin-bottom:1px;padding:3px;'>
 						<label for='local' class='list'><i class='icon-file'></i>파일</label>
-						<select id='local' onChange='remote(""local"", this.selectedIndex)' size='2' class='span4'></select>			
-						</div>
-						
-						<div class='row'>
-						
-							<div class='span3'>
-								<div class='alert alert-info' style='margin-bottom:1px;padding:3px;'>
-								<label for='dev' class='list'><i class='icon-user'></i> 개발 환경</label>
-								<select id='dev' onChange='remote(""dev"", this.selectedIndex)' size='3' style='width:200px;'></select>		
-								</div>
-							</div>
-							<div class='span2'>
-								<div class='alert alert-info' style='margin-bottom:1px;padding:3px;'>
-								<label for='root' class='list'><i class='icon-folder-open'></i> NL 설정</label>
-								<select id='root' onChange='remote(""root"", this.selectedIndex)' size='3' style='width:100px;'></select>	
-								</div>
-							</div>	
+						<select id='local' onChange='remote(""local"", this.selectedIndex)' size='5' class='span4'></select>
 						</div>
 					</div>
 				</div>
@@ -213,49 +164,6 @@ namespace PLinkCore
 			return string.Format("{{ \"list\" : [{0}] }}", strBuilder.ToString());
 		}
 		
-
-		
-
-		
-		public static string MainIndex()
-		{
-			string temp = @"
-			<div class='container'>
-				<h3> P)Link </h3>
-				
-				<div class='row-fluid'>
-					<div class='span6' style='background:yellow;'>
-						<div class='span1'>
-						<a href='' class='btn btn-danger btn-large'> <i class='icon-play icon-white'></i> Start </a>
-						</div>
-						<div class='span4'>
-						<form class='form-horizontal' style='background:white;'>
-						<div class='control-group'>
-							<div class='controls'>
-								<select></select>
-							</div>
-						</div>
-						</form>
-						</div>
-					</div>
-					<div class='span6' style='background:red;'>
-					fdsaf
-					</div>					
-				</div>
-				<div class='row-fluid'>
-					<div class='span12' style='background:black;'>
-					fdsaf
-					</div>
-				</div>
-
-
-			</div>
-		
-			";
-			
-			return root(temp);
-		}
-		
 		/**
 		 * 
 		 * HostData 얻어오기 
@@ -263,49 +171,17 @@ namespace PLinkCore
 		 * 
 		 */ 
  		public static ArrayList apiPolicyList(string type) { 
-			if (type.Equals("web")) { 
-				return PLink.host.getWebList();
-			} else { 
-				ArrayList list = PLink.host.getFileList();
-				ArrayList temp = new ArrayList();
-				foreach(KeyValuePair<string, string> data in list) { 
-					temp.Add(string.Format("{0}|{1}", data.Key, data.Value));
-				}
-				return temp;
+			ArrayList list = PLink.host.getFileList();
+			ArrayList temp = new ArrayList();
+			foreach(KeyValuePair<string, string> data in list) { 
+				temp.Add(string.Format("{0}|{1}", data.Key, data.Value));
 			}
+			return temp;
 		}
-		
-		public static ArrayList apiDevList() { 
-			return PLink.host.getDevList();
-		}
-		
-		public static ArrayList apiRootList(string UserId) { 
-			return new ArrayList(PLink.host.getRootList(UserId));
-		}		
 		
 		public static ArrayList apiPolicyData() { 
 			return PLink.host.getData();
 		}		
 		
-		public static string BookmarkListOption(ArrayList list, int index)
-		{
-			StringBuilder sb = new StringBuilder();
-			for(int i = 0, len = list.Count; i < len; i++) { 
-				sb.Append(new BookmarkItem(list[i].ToString()).ToOption(i, i == index));
-			}
-			return sb.ToString();	
-		}
-		
-		public static ArrayList apiBookmarkList()
-		{
-			ArrayList list = PLink.host.getBookmarkList();
-			ArrayList data = new ArrayList();
-			
-			foreach( KeyValuePair<string, string> item in list) { 
-				data.Add(item.Key);
-			}
-
-			return data;
-		}
 	}
 }

@@ -49,9 +49,6 @@ namespace PLink
 			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
 			this.DisabledCacheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.documentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.feedBackToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.infomationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel1 = new System.Windows.Forms.Panel();
@@ -78,7 +75,7 @@ namespace PLink
 			this.menuStrip1.Location = new System.Drawing.Point(0, 0);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-			this.menuStrip1.Size = new System.Drawing.Size(918, 30);
+			this.menuStrip1.Size = new System.Drawing.Size(712, 30);
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -144,37 +141,15 @@ namespace PLink
 			// helpToolStripMenuItem
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.documentToolStripMenuItem,
-									this.feedBackToolStripMenuItem,
-									this.toolStripSeparator1,
 									this.infomationToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
 			this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 16);
 			this.helpToolStripMenuItem.Text = "도움말";
 			// 
-			// documentToolStripMenuItem
-			// 
-			this.documentToolStripMenuItem.Name = "documentToolStripMenuItem";
-			this.documentToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-			this.documentToolStripMenuItem.Text = "사용 메뉴얼";
-			this.documentToolStripMenuItem.Click += new System.EventHandler(this.DocumentToolStripMenuItemClick);
-			// 
-			// feedBackToolStripMenuItem
-			// 
-			this.feedBackToolStripMenuItem.Name = "feedBackToolStripMenuItem";
-			this.feedBackToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
-			this.feedBackToolStripMenuItem.Text = "피드백 전달";
-			this.feedBackToolStripMenuItem.Click += new System.EventHandler(this.FeedBackToolStripMenuItemClick);
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(137, 6);
-			// 
 			// infomationToolStripMenuItem
 			// 
 			this.infomationToolStripMenuItem.Name = "infomationToolStripMenuItem";
-			this.infomationToolStripMenuItem.Size = new System.Drawing.Size(140, 22);
+			this.infomationToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
 			this.infomationToolStripMenuItem.Text = "PLink 정보";
 			this.infomationToolStripMenuItem.Click += new System.EventHandler(this.InfomationToolStripMenuItemClick);
 			// 
@@ -190,7 +165,7 @@ namespace PLink
 			this.tableLayoutPanel1.RowCount = 2;
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
 			this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-			this.tableLayoutPanel1.Size = new System.Drawing.Size(918, 567);
+			this.tableLayoutPanel1.Size = new System.Drawing.Size(712, 567);
 			this.tableLayoutPanel1.TabIndex = 1;
 			// 
 			// panel1
@@ -199,7 +174,7 @@ namespace PLink
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(3, 33);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(912, 531);
+			this.panel1.Size = new System.Drawing.Size(706, 531);
 			this.panel1.TabIndex = 1;
 			// 
 			// tabsViews
@@ -209,7 +184,7 @@ namespace PLink
 			this.tabsViews.Multiline = true;
 			this.tabsViews.Name = "tabsViews";
 			this.tabsViews.SelectedIndex = 0;
-			this.tabsViews.Size = new System.Drawing.Size(912, 531);
+			this.tabsViews.Size = new System.Drawing.Size(706, 531);
 			this.tabsViews.TabIndex = 0;
 			// 
 			// notifyIcon1
@@ -246,11 +221,11 @@ namespace PLink
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(928, 577);
+			this.ClientSize = new System.Drawing.Size(722, 577);
 			this.Controls.Add(this.tableLayoutPanel1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
-			this.MinimumSize = new System.Drawing.Size(936, 604);
+			this.MinimumSize = new System.Drawing.Size(730, 600);
 			this.Name = "MainForm";
 			this.Padding = new System.Windows.Forms.Padding(5);
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -276,13 +251,10 @@ namespace PLink
 		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem1;
 		private System.Windows.Forms.ToolStripMenuItem restorePLinkToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem infomationToolStripMenuItem;
-		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		public System.Windows.Forms.ContextMenuStrip mnuNotify;
 		private System.Windows.Forms.NotifyIcon notifyIcon1;
 		public System.Windows.Forms.Panel panel1;
 		private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-		private System.Windows.Forms.ToolStripMenuItem feedBackToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem documentToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem closeToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem pLinkToolStripMenuItem;

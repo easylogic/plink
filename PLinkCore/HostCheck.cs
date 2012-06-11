@@ -59,25 +59,6 @@ namespace PLinkCore
 			return url_temp[0].Replace(this.Before, this.After) + ((url_temp.Length > 1) ? "?" + url_temp[1] : "");
 		}
 		
-		public void setUserConfig(string key, string value) { 
-			if (isUrl() || isPattern()) {
-				After = Util.setUserConfig(After, key, value);
-				getHostItem().Redirect = After;		// 정책 캐쉬 
-			}
-		}
-		
-		public void setKeyword(string key, string value) { 
-			if (isUrl() || isPattern()) {
-				After = Util.setKeyword(After, key, value);
-				getHostItem().Redirect = After;		// 정책 캐쉬 
-			}
-		}		
-		
-		public static string scriptFilter(string url)
-		{
-			return Util.scriptFilter(url);
-		}
-		
 		public HostItem getHostItem()
 		{
 			return PLink.host.getHostItem(this.Before);

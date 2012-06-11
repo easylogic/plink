@@ -27,8 +27,6 @@ namespace PLink
 			//
 			// TODO: Add constructor code after the InitializeComponent() call.
 			//
-			linkLabel1.Links.Remove(linkLabel1.Links[0]);
-			linkLabel1.Links.Add(0, linkLabel1.Text.Length, "mailto:easylogic@neowiz.com");
 		}
 		
 		void Button1Click(object sender, EventArgs e)

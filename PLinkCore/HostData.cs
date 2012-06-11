@@ -429,46 +429,6 @@ namespace PLinkCore
 			return hostname;
 		}  		
 		
-        public void changeHostFile() { 
-
-			try {         	
-				if (list == null) return;
-				
-				StringBuilder sb = new StringBuilder();
-				foreach(KeyValuePair<string, HostItem> item in list) { 
-					if (!item.Value.isSaveHost()) continue;
-
-					string temp_host = getIp(item.Value.After);
-					if (string.IsNullOrEmpty(temp_host)) {
-						sb.Append(Util.DELIMITER_INFO);
-					}
-					sb.Append(temp_host).Append("\t\t\t\t\t").AppendLine(item.Value.Before);
-				}
-	
-				string text = "\r\n### PLink Host Policy ###\r\n" +  sb.ToString();				
-				
-        		File.WriteAllText(HOST_ROOT + Util.HOST_SOURCE, text);
-        	} catch (Exception ex) { 
-				System.Diagnostics.Debug.WriteLine(ex.Message);
-        	}
-        }  
-		
-		public void initHostFile() { 
-			File.WriteAllText(HOST_ROOT + Util.HOST_SOURCE, "");
-			File.WriteAllText(HOST_ROOT + Util.HOST_TARGET, "");
-			
-			this.changeHostFile();
-		}
-		
-        
-        public void rollbackHostFile() { 
-        	try { 
-       			File.Copy(HOST_ROOT + Util.HOST_TARGET, HOST_ROOT + Util.HOST_SOURCE, true);
-        	} catch (Exception ex) { 
-				System.Diagnostics.Debug.WriteLine(ex.Message);
-        	}
-        }   
-			
 		/**
 		 * 현재는 패턴 체크를 하나만 하도록 되어 있음 
 		 * 
@@ -524,15 +484,6 @@ namespace PLinkCore
 			return null;
 		}
 		
-		public void backupHostFile()
-		{
-        	try { 
-       			File.Copy(HOST_ROOT + Util.HOST_SOURCE, HOST_ROOT + Util.HOST_TARGET, true);
-        	} catch (Exception ex) { 
-				System.Diagnostics.Debug.WriteLine(ex.Message);
-        	}
-		}
-		
 		public bool export(string path)
 		{
 			StringBuilder sb = new StringBuilder();
@@ -553,20 +504,7 @@ namespace PLinkCore
 				return false; 
 			}
 		}
-		
-		
-		public void setBookmark(string key, string value)
-		{
-			Util.setBookmark(key,value);
-		}
-		
-		public void deleteBookmark(string key)  { 
-			Util.deleteBookmark(key);
-		}
-		
-		public ArrayList getBookmarkList() {
-			return Util.getBookmarkList();
-		}
+
 	}
 
 }

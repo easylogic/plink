@@ -92,17 +92,7 @@ namespace PLink
 				
 			}
 		}
-		
-		void DocumentToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			System.Diagnostics.Process.Start("explorer.exe", "http://ndis.neowiz.com/projects/news/wiki/Plink-usage");
-		}
-		
-		void FeedBackToolStripMenuItemClick(object sender, EventArgs e)
-		{
-			System.Diagnostics.Process.Start("mailto:easylogic@neowiz.com;?subject=알려주세요!&CC=nw_gms_service_develop_team@neowiz.com;&body=이상한 점 있으면 바로 알려주세요.");
-		}
-		
+
 		void ConfigOptionToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			ConfigOptionForm optionForm = new ConfigOptionForm();

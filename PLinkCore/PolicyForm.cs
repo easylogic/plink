@@ -57,8 +57,6 @@ namespace PLinkCore
 					return 1;	
 				} else if (Type.Equals(Util.TYPE_NAME_URL)) {
 					return 2;	
-				} else if (Type.Equals(Util.TYPE_NAME_REAL)) {
-					return 3;						
 				} else if (Type.Equals(Util.TYPE_NAME_PATTERN)) {
 					return 4;						
 				} 
@@ -81,8 +79,6 @@ namespace PLinkCore
 					cbType.SelectedIndex = 0;	
 				} else if (value.Equals(Util.TYPE_NAME_URL)) {
 					cbType.SelectedIndex = 1;	
-				} else if (value.Equals(Util.TYPE_NAME_REAL)) {
-					cbType.SelectedIndex = 2;					
 				} else if (value.Equals(Util.TYPE_NAME_PATTERN)) {
 					cbType.SelectedIndex = 2;		
 				} else { 

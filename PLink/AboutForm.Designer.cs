@@ -40,7 +40,6 @@ namespace PLink
 			this.button1 = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-			this.linkLabel1 = new System.Windows.Forms.LinkLabel();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -73,31 +72,15 @@ namespace PLink
 			this.richTextBox1.Name = "richTextBox1";
 			this.richTextBox1.Size = new System.Drawing.Size(341, 236);
 			this.richTextBox1.TabIndex = 2;
-			this.richTextBox1.Text = "PLink 2012 \n\n버전 1.0.0\n\n㈜ 네오위즈 게임즈\n\n\n경고 : 이 프로그램은 네오위즈 게임즈에 관련된 개발환경 및 테스트 환경에 연결하" +
-			"는 용도로 만들어졌습니다. \n\n----------------------------------------------------\n\n\n만든이 : 박진" +
-			"호";
+			this.richTextBox1.Text = "PLink \n\n\n\n㈜ 네오위즈 게임즈\n\n\n경고 : 이 프로그램은 웹 프로그램의 개발환경 및 테스트 환경에 연결하는 용도로 만들어졌습니다. \n\n--" +
+			"--------------------------------------------------\n\n\n만든이 : easylogic@neowiz.com";
 			this.richTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1TextChanged);
-			// 
-			// linkLabel1
-			// 
-			this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 20);
-			this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.AlwaysUnderline;
-			this.linkLabel1.Location = new System.Drawing.Point(209, 215);
-			this.linkLabel1.Margin = new System.Windows.Forms.Padding(0);
-			this.linkLabel1.Name = "linkLabel1";
-			this.linkLabel1.Size = new System.Drawing.Size(149, 23);
-			this.linkLabel1.TabIndex = 3;
-			this.linkLabel1.TabStop = true;
-			this.linkLabel1.Text = "easylogic@neowiz.com";
-			this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-			this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel1LinkClicked);
 			// 
 			// AboutForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(471, 290);
-			this.Controls.Add(this.linkLabel1);
 			this.Controls.Add(this.richTextBox1);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.button1);
@@ -113,7 +96,6 @@ namespace PLink
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);
 		}
-		private System.Windows.Forms.LinkLabel linkLabel1;
 		private System.Windows.Forms.RichTextBox richTextBox1;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button button1;

@@ -45,19 +45,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ChangeLog.txt" />
     <None Include="Properties\app.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookmarkItem.cs">
       <DependentUpon>HostData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DevItem.cs">
-      <DependentUpon>HostData.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DownloadForm.cs" />
-    <Compile Include="DownloadForm.Designer.cs">
-      <DependentUpon>DownloadForm.cs</DependentUpon>
     </Compile>
     <Compile Include="HostCheck.cs">
       <DependentUpon>HostData.cs</DependentUpon>
@@ -94,17 +86,11 @@
       <DependentUpon>HostData.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RootItem.cs">
-      <DependentUpon>HostData.cs</DependentUpon>
-    </Compile>
     <Compile Include="Util.cs">
       <DependentUpon>PLink.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="DownloadForm.resx">
-      <DependentUpon>DownloadForm.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="HostTab.resx">
       <DependentUpon>HostTab.cs</DependentUpon>
     </EmbeddedResource>

@@ -47,7 +47,7 @@ namespace PLinkCore
 		        
 		        WebBrowser browser = new WebBrowser();
 		       	browser.Navigate("about:blank");
-		       	browser.Size = new System.Drawing.Size(400, 460);
+		       	browser.Size = new System.Drawing.Size(400, 250);
 		       	browser.ScrollBarsEnabled = false;
 		       	ToolStripControlHost host = new ToolStripControlHost(browser);
 		       	host.Margin = Padding.Empty;
@@ -93,11 +93,6 @@ namespace PLinkCore
 			string version_text = version.ToString();        	
 
         	PLink.host.Version = version_text;
-        	PLink.host.UpdateVersion = Util.checkVersion(PLink.host.Version);
-        	
-        	if (!PLink.host.Version.Equals(PLink.host.UpdateVersion)) {
-        		hostTab.btnUpdater.Visible = true; 
-        	}
         }
         
         /**
@@ -151,11 +146,6 @@ namespace PLinkCore
 		 * 
 		 */
 		public PLinkApiType router(string path) { 
-			// 메인 페이지 
-			if (path.StartsWith("/main")) { 
-				return PLinkApi.html(PLinkApi.MainIndex());
-			}
-			
 			// 리모콘 페이지 
 			if (path.StartsWith("/view")) { 
 				return PLinkApi.html(PLinkApi.ViewIndex());
@@ -164,27 +154,6 @@ namespace PLinkCore
 			// PLink 시작 여부 
 			if (path.StartsWith("/plink/state")) { 
 				return PLinkApi.json("{ \"result\" : "+ ( host.StartState ? "true" : "false" ) +" } ");
-			}
-			
-			// 정책리스트, 개발자 리스트 리로드 
-			if (path.StartsWith("/reload")) { 
-				hostTab.loadWebData();
-				hostTab.loadDevList();
-			}
-
-			// 루트 리스트 
-			if (path.StartsWith("/policy/list/bookmark")) { 
-				return PLinkApi.html(PLinkApi.BookmarkListOption(PLinkApi.apiBookmarkList(), host.SelectBookmarkIndex));
-			}			
-			
-			// 루트 리스트 
-			if (path.StartsWith("/policy/list/root")) { 
-				return PLinkApi.html(PLinkApi.RootListOption(PLinkApi.apiRootList(host.UserId), host.SelectRootIndex));
-			}
-			
-			// 개발자 리스트
-			if (path.StartsWith("/policy/list/dev")) { 
-				return PLinkApi.html(PLinkApi.DevListOption(PLinkApi.apiDevList(), host.SelectDevIndex));
 			}
 			
 			// 파일 리스트 
@@ -210,32 +179,11 @@ namespace PLinkCore
 			// 개별 리스트 선택 
 			if (path.StartsWith("/select")) { 
 				int ilen = 0;
-				// 웹 정책 선택 
-				if (int.TryParse(path.Replace("/select/web/", ""), out ilen)) { 
-					hostTab.SelectWebIndex = ilen;
-					return PLinkApi.json("{ \"result\" : \"success\", \"type\" : \"web\" } ");
-				} 
-				// 파일 정책 선택 
-				else if (int.TryParse(path.Replace("/select/local/", ""), out ilen)) {
+				if (int.TryParse(path.Replace("/select/local/", ""), out ilen)) {
 					hostTab.SelectLocalIndex = ilen;
 					return PLinkApi.json("{ \"result\" : \"success\", \"type\" : \"local\" } ");	
 				} 
-				// 개발자 선택 
-				else if (int.TryParse(path.Replace("/select/dev/", ""), out ilen)) {
-					hostTab.SelectDevIndex = ilen;
-					return PLinkApi.json("{ \"result\" : \"success\", \"type\" : \"dev\" } ");	
-				} 
-				// 루트 선택 
-				else if (int.TryParse(path.Replace("/select/root/", ""), out ilen)) {
-					hostTab.SelectRootIndex = ilen;
-					return PLinkApi.json("{ \"result\" : \"success\", \"type\" : \"root\" } ");						
-				}
-
-				// 북마크 선택 
-				else if (int.TryParse(path.Replace("/select/bookmark/", ""), out ilen)) {
-					hostTab.SelectBookmarkIndex = ilen;
-					return PLinkApi.json("{ \"result\" : \"success\", \"type\" : \"bookmark\" } ");						
-				}				
+		
 				
 				return PLinkApi.json("{ \"result\" : \"error\" } ");
 			}
