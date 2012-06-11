@@ -1,0 +1,13 @@
+{
+  "name": "PLink Remote",
+  "version": "1.0",
+  "manifest_version": 1,
+  "description": "PLink Remote 프로그램입니다. 원격으로 프록시 개발환경을 설정하실 수 있습니다.",
+  "browser_action": {
+    "default_icon": "logo.ico",
+	"default_popup": "popup.html"
+  },
+  "permissions": [
+    "http://api.plink/"
+  ]
+}
