@@ -129,22 +129,22 @@ namespace PLinkCore
 			// 
 			// columnHeader5
 			// 
-			this.columnHeader5.Text = "타입";
+			this.columnHeader5.Text = "Type";
 			this.columnHeader5.Width = 73;
 			// 
 			// columnHeader1
 			// 
-			this.columnHeader1.Text = "패턴";
+			this.columnHeader1.Text = "Before";
 			this.columnHeader1.Width = 250;
 			// 
 			// columnHeader2
 			// 
-			this.columnHeader2.Text = "변환";
+			this.columnHeader2.Text = "After";
 			this.columnHeader2.Width = 300;
 			// 
 			// columnHeader3
 			// 
-			this.columnHeader3.Text = "설명";
+			this.columnHeader3.Text = "Description";
 			this.columnHeader3.Width = 200;
 			// 
 			// contextMenuStrip1
@@ -207,7 +207,7 @@ namespace PLinkCore
 			this.settingGroups.Size = new System.Drawing.Size(848, 136);
 			this.settingGroups.TabIndex = 13;
 			this.settingGroups.TabStop = false;
-			this.settingGroups.Text = "설정";
+			this.settingGroups.Text = "Tools";
 			// 
 			// checkBox2
 			// 
@@ -228,7 +228,7 @@ namespace PLinkCore
 			this.checkBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.checkBox2.Size = new System.Drawing.Size(96, 56);
 			this.checkBox2.TabIndex = 14;
-			this.checkBox2.Text = "▶ 시작";
+			this.checkBox2.Text = "▶ Start";
 			this.checkBox2.UseVisualStyleBackColor = false;
 			this.checkBox2.CheckedChanged += new System.EventHandler(this.CheckBox2CheckedChanged);
 			// 
@@ -258,7 +258,7 @@ namespace PLinkCore
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(42, 24);
 			this.button2.TabIndex = 5;
-			this.button2.Text = "찾기";
+			this.button2.Text = "Find";
 			this.toolTip1.SetToolTip(this.button2, "파일 열기");
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.Button2Click);
@@ -269,18 +269,18 @@ namespace PLinkCore
 			this.label6.Name = "label6";
 			this.label6.Size = new System.Drawing.Size(87, 24);
 			this.label6.TabIndex = 25;
-			this.label6.Text = "헤더 인코딩";
+			this.label6.Text = "Header Encoding";
 			this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// label2
 			// 
 			this.label2.BackColor = System.Drawing.Color.Transparent;
 			this.label2.Font = new System.Drawing.Font("굴림", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-			this.label2.Location = new System.Drawing.Point(160, 24);
+			this.label2.Location = new System.Drawing.Point(152, 24);
 			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(40, 23);
+			this.label2.Size = new System.Drawing.Size(48, 23);
 			this.label2.TabIndex = 3;
-			this.label2.Text = "정 책";
+			this.label2.Text = "Rules";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
 			// 
 			// httpsFilter
@@ -302,7 +302,7 @@ namespace PLinkCore
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(86, 23);
 			this.label8.TabIndex = 23;
-			this.label8.Text = "HTTP 필터";
+			this.label8.Text = "Http Filter";
 			this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// btnSave
@@ -335,7 +335,7 @@ namespace PLinkCore
 			this.hostGroups.Size = new System.Drawing.Size(848, 367);
 			this.hostGroups.TabIndex = 14;
 			this.hostGroups.TabStop = false;
-			this.hostGroups.Text = "Host 설정";
+			this.hostGroups.Text = "Host List";
 			// 
 			// hostTablePanel
 			// 

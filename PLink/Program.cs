@@ -34,7 +34,7 @@ namespace PLink
 				
 				mutex.ReleaseMutex();
 			} else { 
-				MessageBox.Show("이미 실행 중입니다.");
+				MessageBox.Show("PLink is already running!");
 				Application.Exit();
 			}
 		}

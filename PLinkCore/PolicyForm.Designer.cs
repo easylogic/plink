@@ -91,7 +91,7 @@ namespace PLinkCore
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(56, 28);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "타입";
+			this.label1.Text = "Type";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label2
@@ -101,7 +101,7 @@ namespace PLinkCore
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(56, 28);
 			this.label2.TabIndex = 1;
-			this.label2.Text = "정책";
+			this.label2.Text = "Before";
 			this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label3
@@ -111,7 +111,7 @@ namespace PLinkCore
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(56, 28);
 			this.label3.TabIndex = 2;
-			this.label3.Text = "변환";
+			this.label3.Text = "After";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label4
@@ -121,7 +121,7 @@ namespace PLinkCore
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(56, 31);
 			this.label4.TabIndex = 3;
-			this.label4.Text = "설명";
+			this.label4.Text = "Desc";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// cbType
@@ -221,7 +221,7 @@ namespace PLinkCore
 			this.button2.Name = "button2";
 			this.button2.Size = new System.Drawing.Size(75, 29);
 			this.button2.TabIndex = 1;
-			this.button2.Text = "추가";
+			this.button2.Text = "Save";
 			this.button2.UseVisualStyleBackColor = false;
 			this.button2.Click += new System.EventHandler(this.Button2Click);
 			// 
@@ -233,7 +233,7 @@ namespace PLinkCore
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 29);
 			this.button1.TabIndex = 0;
-			this.button1.Text = "닫기";
+			this.button1.Text = "Close";
 			this.button1.UseVisualStyleBackColor = true;
 			// 
 			// tableLayoutPanel2
@@ -263,7 +263,7 @@ namespace PLinkCore
 			this.Name = "PolicyForm";
 			this.Padding = new System.Windows.Forms.Padding(5);
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "정책을 변경해보세요.";
+			this.Text = "Change Host";
 			this.TopMost = true;
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();

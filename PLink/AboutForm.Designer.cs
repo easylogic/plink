@@ -50,7 +50,7 @@ namespace PLink
 			this.button1.Name = "button1";
 			this.button1.Size = new System.Drawing.Size(75, 23);
 			this.button1.TabIndex = 0;
-			this.button1.Text = "확인";
+			this.button1.Text = "OK";
 			this.button1.UseVisualStyleBackColor = true;
 			this.button1.Click += new System.EventHandler(this.Button1Click);
 			// 
@@ -72,8 +72,8 @@ namespace PLink
 			this.richTextBox1.Name = "richTextBox1";
 			this.richTextBox1.Size = new System.Drawing.Size(341, 236);
 			this.richTextBox1.TabIndex = 2;
-			this.richTextBox1.Text = "PLink \n\n\n\n㈜ 네오위즈 게임즈\n\n\n경고 : 이 프로그램은 웹 프로그램의 개발환경 및 테스트 환경에 연결하는 용도로 만들어졌습니다. \n\n--" +
-			"--------------------------------------------------\n\n\n만든이 : easylogic@neowiz.com";
+			this.richTextBox1.Text = "PLink \n\n\n\nNEOWIZ GAMES Corp.\n\n\n--------------------------------------------------" +
+			"--\n\n\ne-mail : easylogic@neowiz.com";
 			this.richTextBox1.TextChanged += new System.EventHandler(this.RichTextBox1TextChanged);
 			// 
 			// AboutForm
@@ -91,7 +91,7 @@ namespace PLink
 			this.ShowIcon = false;
 			this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "PLink 정보";
+			this.Text = "About PLink";
 			this.TopMost = true;
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
 			this.ResumeLayout(false);

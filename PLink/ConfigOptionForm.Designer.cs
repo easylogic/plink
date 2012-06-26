@@ -65,7 +65,7 @@ namespace PLink
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(88, 28);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "접속 포트 : ";
+			this.label1.Text = "Port : ";
 			this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// configPort
@@ -109,7 +109,7 @@ namespace PLink
 			this.ShowIcon = false;
 			this.ShowInTaskbar = false;
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "PLink 환경설정";
+			this.Text = "Settings";
 			this.tableLayoutPanel1.ResumeLayout(false);
 			this.tableLayoutPanel1.PerformLayout();
 			this.ResumeLayout(false);

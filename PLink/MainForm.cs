@@ -130,5 +130,15 @@ namespace PLink
 		}
 		
 
+		
+		void GithubToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Fiddler.Utilities.LaunchHyperlink("https://github.com/neowizgames/plink");
+		}
+		
+		void SiteToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			Fiddler.Utilities.LaunchHyperlink("http://neowizgames.github.com/plink");
+		}
 	}
 }

@@ -50,6 +50,7 @@ namespace PLink
 			this.DisabledCacheToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.infomationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.githubToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.tabsViews = new System.Windows.Forms.TabControl();
@@ -57,6 +58,8 @@ namespace PLink
 			this.mnuNotify = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.restorePLinkToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.closeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.siteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.menuStrip1.SuspendLayout();
 			this.tableLayoutPanel1.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -86,8 +89,8 @@ namespace PLink
 									this.toolStripSeparator2,
 									this.closeToolStripMenuItem});
 			this.pLinkToolStripMenuItem.Name = "pLinkToolStripMenuItem";
-			this.pLinkToolStripMenuItem.Size = new System.Drawing.Size(41, 16);
-			this.pLinkToolStripMenuItem.Text = "파일";
+			this.pLinkToolStripMenuItem.Size = new System.Drawing.Size(37, 16);
+			this.pLinkToolStripMenuItem.Text = "File";
 			// 
 			// CapturePLinkToolStripMenuItem
 			// 
@@ -106,7 +109,7 @@ namespace PLink
 			// 
 			this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
 			this.closeToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
-			this.closeToolStripMenuItem.Text = "끝내기";
+			this.closeToolStripMenuItem.Text = "Close";
 			this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItemClick);
 			// 
 			// 설정ToolStripMenuItem
@@ -116,42 +119,52 @@ namespace PLink
 									this.toolStripSeparator3,
 									this.DisabledCacheToolStripMenuItem});
 			this.설정ToolStripMenuItem.Name = "설정ToolStripMenuItem";
-			this.설정ToolStripMenuItem.Size = new System.Drawing.Size(41, 16);
-			this.설정ToolStripMenuItem.Text = "설정";
+			this.설정ToolStripMenuItem.Size = new System.Drawing.Size(60, 16);
+			this.설정ToolStripMenuItem.Text = "Options";
 			// 
 			// ConfigOptionToolStripMenuItem
 			// 
 			this.ConfigOptionToolStripMenuItem.Name = "ConfigOptionToolStripMenuItem";
-			this.ConfigOptionToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-			this.ConfigOptionToolStripMenuItem.Text = "환경 설정";
+			this.ConfigOptionToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+			this.ConfigOptionToolStripMenuItem.Text = "Settings";
 			this.ConfigOptionToolStripMenuItem.Click += new System.EventHandler(this.ConfigOptionToolStripMenuItemClick);
 			// 
 			// toolStripSeparator3
 			// 
 			this.toolStripSeparator3.Name = "toolStripSeparator3";
-			this.toolStripSeparator3.Size = new System.Drawing.Size(153, 6);
+			this.toolStripSeparator3.Size = new System.Drawing.Size(161, 6);
 			// 
 			// DisabledCacheToolStripMenuItem
 			// 
 			this.DisabledCacheToolStripMenuItem.Name = "DisabledCacheToolStripMenuItem";
-			this.DisabledCacheToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-			this.DisabledCacheToolStripMenuItem.Text = "캐쉬 적용 안함";
+			this.DisabledCacheToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+			this.DisabledCacheToolStripMenuItem.Text = "Disabled cache";
 			this.DisabledCacheToolStripMenuItem.Click += new System.EventHandler(this.DisabledCacheToolStripMenuItemClick);
 			// 
 			// helpToolStripMenuItem
 			// 
 			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.infomationToolStripMenuItem});
+									this.infomationToolStripMenuItem,
+									this.toolStripSeparator1,
+									this.githubToolStripMenuItem,
+									this.siteToolStripMenuItem});
 			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-			this.helpToolStripMenuItem.Size = new System.Drawing.Size(53, 16);
-			this.helpToolStripMenuItem.Text = "도움말";
+			this.helpToolStripMenuItem.Size = new System.Drawing.Size(42, 16);
+			this.helpToolStripMenuItem.Text = "Help";
 			// 
 			// infomationToolStripMenuItem
 			// 
 			this.infomationToolStripMenuItem.Name = "infomationToolStripMenuItem";
-			this.infomationToolStripMenuItem.Size = new System.Drawing.Size(135, 22);
-			this.infomationToolStripMenuItem.Text = "PLink 정보";
+			this.infomationToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.infomationToolStripMenuItem.Text = "About";
 			this.infomationToolStripMenuItem.Click += new System.EventHandler(this.InfomationToolStripMenuItemClick);
+			// 
+			// githubToolStripMenuItem
+			// 
+			this.githubToolStripMenuItem.Name = "githubToolStripMenuItem";
+			this.githubToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.githubToolStripMenuItem.Text = "Github";
+			this.githubToolStripMenuItem.Click += new System.EventHandler(this.GithubToolStripMenuItemClick);
 			// 
 			// tableLayoutPanel1
 			// 
@@ -217,6 +230,18 @@ namespace PLink
 			this.closeToolStripMenuItem1.Text = "Close";
 			this.closeToolStripMenuItem1.Click += new System.EventHandler(this.CloseToolStripMenuItem1Click);
 			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+			// 
+			// siteToolStripMenuItem
+			// 
+			this.siteToolStripMenuItem.Name = "siteToolStripMenuItem";
+			this.siteToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.siteToolStripMenuItem.Text = "Site";
+			this.siteToolStripMenuItem.Click += new System.EventHandler(this.SiteToolStripMenuItemClick);
+			// 
 			// MainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -229,7 +254,7 @@ namespace PLink
 			this.Name = "MainForm";
 			this.Padding = new System.Windows.Forms.Padding(5);
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-			this.Text = "PLink - 개발환경 접속 에이전트";
+			this.Text = "PLink - a switching tool for web dev";
 			this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainFormClosing);
 			this.Load += new System.EventHandler(this.MainFormLoad);
 			this.Resize += new System.EventHandler(this.MainFormResize);
@@ -241,6 +266,9 @@ namespace PLink
 			this.mnuNotify.ResumeLayout(false);
 			this.ResumeLayout(false);
 		}
+		private System.Windows.Forms.ToolStripMenuItem siteToolStripMenuItem;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+		private System.Windows.Forms.ToolStripMenuItem githubToolStripMenuItem;
 		public System.Windows.Forms.TabControl tabsViews;
 		private System.Windows.Forms.ToolStripMenuItem DisabledCacheToolStripMenuItem;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;

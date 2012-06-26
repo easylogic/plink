@@ -37,9 +37,9 @@ namespace PLinkCore
 			set { 
 				isModify = value;
 				if (isModify) { 
-					button2.Text = "수정";
+					button2.Text = "Modify";
 				} else { 
-					button2.Text = "추가";
+					button2.Text = "Add";
 				}
 			}
 		}
@@ -105,13 +105,13 @@ namespace PLinkCore
 		void Button2Click(object sender, EventArgs e)
 		{
 			if (string.IsNullOrEmpty(Pattern)) { 
-				MessageBox.Show("정책을 적어주세요.");
+				MessageBox.Show("Please write Before host.");
 				textPattern.Focus();
 				return ;	
 			}
 			
 			if (string.IsNullOrEmpty(Change)) { 
-				MessageBox.Show("변경될 URL을 적어주세요.");
+				MessageBox.Show("Please write After host.");
 				textChange.Focus();
 				return ;	
 			}

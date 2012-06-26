@@ -95,14 +95,14 @@ namespace PLinkCore
 		{
 			string temp = @"
 			<div style='padding:5px;'>
-				<h3 >PLink Remote <small><button onClick='full_load()' class='btn btn-success btn-mini'>설정 불러오기</button></small></h3>
+				<h3 >PLink Remote <small><button onClick='full_load()' class='btn btn-success btn-mini'>Load</button></small></h3>
 				<div class='row'>
 					<div class='span5'>
 						<div class='alert' style='margin-bottom:1px;padding:3px;'>
 						<input type='checkbox' id='plink' onClick='remote(""plink"", this.checked)' /> PLink Start! 
 						</div>
 						<div class='alert alert-success' style='margin-bottom:1px;padding:3px;'>
-						<label for='local' class='list'><i class='icon-file'></i>파일</label>
+						<label for='local' class='list'><i class='icon-file'></i>Rules</label>
 						<select id='local' onChange='remote(""local"", this.selectedIndex)' size='5' class='span4'></select>
 						</div>
 					</div>

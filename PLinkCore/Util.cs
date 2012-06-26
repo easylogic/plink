@@ -32,8 +32,8 @@ namespace PLinkCore
 		public const string APP_FIDDLER = "FIDDLER";
 		
     	public const string NAME = "PLink";    	
-    	public const string BTN_START = "▶ 시작";
-    	public const string BTN_END = "■ 중지";    	
+    	public const string BTN_START = "▶ Start";
+    	public const string BTN_END = "■ Stop";    	
     	
     	public const string DIALOG_FILTER = "PLink Policy (*.pcy)|*.pcy";
 		public const string DIALOG_TITLE = "Save PLink Policy File";

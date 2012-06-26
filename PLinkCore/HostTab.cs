@@ -249,7 +249,7 @@ namespace PLinkCore
 			PLink.host.Current = type;
 			
 			if (string.IsNullOrEmpty(title)) {
-				title = "정책 없음";	
+				title = "No Rules";	
 			}
 		}
 		
@@ -276,7 +276,7 @@ namespace PLinkCore
 		void BtnMinusPolicyClick(object sender, EventArgs e)
 		{
 			listView1.Focus();
-			if (MessageBox.Show("선택한 정책을 삭제하시겠습니까?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes) { 
+			if (MessageBox.Show("Delete host?", "Alert", MessageBoxButtons.YesNo) == DialogResult.Yes) { 
 				if (listView1.SelectedItems.Count > 0) { 
 					foreach (ListViewItem item in listView1.SelectedItems) { 
 						string key = item.SubItems[1].Text;
@@ -285,7 +285,7 @@ namespace PLinkCore
 					
 					reloadListView();
 				} else { 
-					MessageBox.Show("선택한 정책이 없습니다.", "Warning");
+					MessageBox.Show("No Select Host.", "Warning");
 				}
 			}
 		}
@@ -315,7 +315,7 @@ namespace PLinkCore
 					
 					reloadListView();
 				} else { 
-					MessageBox.Show("이미 같은 정책이 존재합니다. : " + dialog.Pattern, "Error");
+					MessageBox.Show("Already same host exists : " + dialog.Pattern, "Error");
 				}
 			}
 		}
@@ -337,7 +337,7 @@ namespace PLinkCore
 						
 			dialog.Modify = true;
 			if (hostitem.type == 0) { 
-				MessageBox.Show("수정하실 정책을 선택해주세요!", "Alert");
+				MessageBox.Show("Check Host!", "Alert");
 				return ;	
 			}
 			
